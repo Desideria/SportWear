@@ -1,0 +1,47 @@
+
+# http://api.com/v1/<module>/<feature>
+
+## User Module
+
+   1. 用户注册接口
+      http://api.com/v1/user/register
+
+   2. 用户登录接口
+      http://api.com/v1/user/login
+
+   3. 获取好友列表接口
+      http://api.com/v1/user/list
+
+   4. 添加好友接口
+      http://api.com/v1/user/add
+
+   5. 删除好友接口
+      http://api.com/v1/user/delete
+
+   6. 查看用户资料接口
+      http://api.com/v1/user/view
+
+    etc..
+
+## Sports Plan Module
+
+    1. 查看用户每日运动统计接口
+       http://api.com/v1/plan/view_daily
+
+    2. 添加运动计划接口
+       http://api.com/v1/plan/create
+
+    3. 修改运动计划接口
+       http://api.com/v1/plan/modify
+
+    4. 查看运动计划接口
+       http://api.com/v1/plan/list/XXXXX
+
+    5. 共享运动计划接口
+       http://api.com/v1/plan/share
+
+    6. 用户运动计划列表接口
+       http://api.com/v1/plan/list
+
+    etc..
+
