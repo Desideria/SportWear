@@ -40,7 +40,7 @@
     5. 共享运动计划接口
        http://api.com/v1/plan/share
 
-    6. 用户运动计划列表接口
+    6. 获取运动计划列表接口
        http://api.com/v1/plan/list
 
     etc..
