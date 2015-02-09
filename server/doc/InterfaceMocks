@@ -13,7 +13,7 @@
       http://api.com/v1/user/list
 
    4. 添加好友接口
-      http://api.com/v1/user/add
+      http://api.com/v1/user/add_friend
 
    5. 删除好友接口
       http://api.com/v1/user/delete
@@ -21,27 +21,62 @@
    6. 查看用户资料接口
       http://api.com/v1/user/view
 
+   @delete7. 验证用户登录状态 不需要 
+      http://api.com/v1/user/verify
+
+   @delete8. 获取用户运动记录 - 与6.查看用户资料接口合并 
+      http://api.com/v1/user/sport_log
+
+   @delete9. 检查用户名是否存在 - 与1.注册接口合并 #delete 
+      http://api.com/v1/user/check
+
+   10. 修改用户资料接口
+      http://api.com/v1/user/modify_info
+
+   11. 修改用户登录密码接口
+      http://api.com/v1/user/modify_pwd
+
     etc..
 
 ## Sports Plan Module
 
     1. 查看用户每日运动统计接口
-       http://api.com/v1/plan/view_daily
+       http://api.com/v1/sport/view_daily
 
-    2. 添加运动计划接口
-       http://api.com/v1/plan/create
+    2. 添加运动计划接口 - 同步上传
+       http://api.com/v1/sport/create
 
-    3. 修改运动计划接口
-       http://api.com/v1/plan/modify
+    @delete 3. 修改运动计划接口
+       http://api.com/v1/sport/modify
 
     4. 查看运动计划接口
-       http://api.com/v1/plan/list/XXXXX
+       http://api.com/v1/sport/list/XXXXX
 
     5. 共享运动计划接口
-       http://api.com/v1/plan/share
+       http://api.com/v1/sport/share
 
     6. 获取运动计划列表接口
-       http://api.com/v1/plan/list
+       http://api.com/v1/sport/list
+
+    7. 删除用户运动计划
+       http://api.com/v1/sport/delete
 
     etc..
+
+## SayHi Module
+
+    1. Send Hi
+       http://api.com/v1/sh/send
+
+    2. Reply Hi
+       http://api.com/v1/sh/reply
+
+    3. SayHi List 
+       http://api.com/v1/sh/list
+   
+
+
+
+
+
 
