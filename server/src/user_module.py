@@ -280,6 +280,227 @@ def user_delete_friend():
                 return jsonify(success_task)
     return jsonify(success_task)
 
+# Sport Module
+
+
+# 1. Get Daily Sport Report
+daily_success_task = {
+    'msg': '1',
+    'daily': {
+        'total': 4000,
+        'current': 3500,
+        'walking': {
+            'active': '1',
+            'calories': '1000',
+            'time': 2,
+            'distance': '800',
+            'step': '981',
+            'velocity': '6',
+            'route': [
+                {
+                    'longitude': 120.1112,
+                    'latitude': 90.1112
+                },
+                {
+                    'longitude': 120.1113,
+                    'latitude': 90.1113
+                }],
+            'moment': [
+                {
+                    'period': '8',
+                    'calories': '400'
+                },
+                {
+                    'period': '12',
+                    'calories': '450'
+                }]
+        },
+        'running': {
+            'active': '1',
+            'calories': '2000',
+            'time': 1.5,
+            'distance': '5000',
+            'step': '',
+            'velocity': '30',
+            'route': [
+                {
+                    'longitude': 120.1112,
+                    'latitude': 90.1112
+                },
+                {
+                    'longitude': 120.1113,
+                    'latitude': 90.1113
+                }],
+            'moment': [
+                {
+                    'period': '14',
+                    'calories': '1400'
+                },
+                {
+                    'period': '15',
+                    'calories': '1450'
+                }]
+        },
+        'cycling': {
+            'active': '0'
+        }
+    }
+}
+
+
+@app.route('/v1/sport/view_daily', methods=['GET'])
+def sport_view_daily():
+    if not request.args:
+        return jsonify(user_error_task[0])
+    if not'user_name' in request.args or not'date' in request.args:
+        return jsonify({
+            'msg': '0',
+            'errorCode': '0210',
+            'errorMsg': 'User_name or Date is empty.'
+        })
+    user_name = request.args['user_name']
+    date = request.args['date']
+    # check data
+    # search database
+    return jsonify(daily_success_task)
+
+
+# 2.Upload Sport Plan
+@app.route('/v1/sport/upload_plan', methods=['POST'])
+def sport_upload_plan():
+    return ''
+
+
+sport_detail_task = {
+    'msg': '1',
+    'sport_plan': {
+        'total': 4000,
+        'current': 3500,
+        'walking': {
+            'active': '1',
+            'calories': '1000',
+            'time': 2,
+            'distance': '800',
+            'step': '981',
+            'velocity': '6',
+            'route': [
+                {
+                    'longitude': 120.1112,
+                    'latitude': 90.1112
+                },
+                {
+                    'longitude': 120.1113,
+                    'latitude': 90.1113
+                }],
+            'moment': [
+                {
+                    'period': '8',
+                    'calories': '400'
+                },
+                {
+                    'period': '12',
+                    'calories': '450'
+                }]
+        },
+        'running': {
+            'active': '1',
+            'calories': '2000',
+            'time': 1.5,
+            'distance': '5000',
+            'step': '',
+            'velocity': '30',
+            'route': [
+                {
+                    'longitude': 120.1112,
+                    'latitude': 90.1112
+                },
+                {
+                    'longitude': 120.1113,
+                    'latitude': 90.1113
+                }],
+            'moment': [
+                {
+                    'period': '14',
+                    'calories': '1400'
+                },
+                {
+                    'period': '15',
+                    'calories': '1450'
+                }]
+        },
+        'cycling': {
+            'active': '0'
+        },
+        'shared': [
+            {
+                'user_id': '1001',
+                'user_name': 'admins',
+                'progress': '56'
+            },
+            {
+                'user_id': '1001',
+                'user_name': 'ray',
+                'progress': '48'
+            }
+        ]
+    }
+}
+
+
+# 3.View User's Sport Plan Detail
+@app.route('/v1/sport/list_detail', methods=['GET'])
+def sport_view_list_detail():
+    return jsonify(sport_detail_task)
+
+
+# 4.View User's Sport Plan List
+@app.route('/v1/sport/list', methods=['GET'])
+def sport_view_list():
+    return ''
+
+
+# 5.Synchronize User's Sport Report
+@app.route('/v1/sport/asy', methods=['POST'])
+def sport_sync_report():
+    return ''
+
+
+# 6.Delete User's Sport Plan
+@app.route('/v1/sport/delete', methods=['POST'])
+def sport_delete_plan():
+    return ''
+
+
+# 7.Share User's Sport Plan
+@app.route('/v1/sport/share', methods=['POST'])
+def sport_share_plan():
+    return ''
+
+
+# 8.Verify Shared Sport Plan
+@app.route('/v1/sport/verify_share')
+def sport_verify_shared_plan():
+    return ''
+
+
+# SayHi Module
+# 1.Send SayHi
+@app.route('/v1/sh/send', methods=['POST'])
+def sh_send():
+    return ''
+
+
+# 2.Reply SayHi
+@app.route('/v1/sh/reply', methods=['POST'])
+def sh_reply():
+    return ''
+
+
+# 3.Get SayHi History
+@app.route('/v1/sh/list', methods=['POST'])
+def sh_get_list():
+    return ''
+
 
 if __name__ == '__main__':
     app.run()
