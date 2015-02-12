@@ -368,7 +368,10 @@ def sport_view_daily():
 # 2.Upload Sport Plan
 @app.route('/v1/sport/upload_plan', methods=['POST'])
 def sport_upload_plan():
-    return ''
+    # check data
+    return jsonify({
+        'msg': '1'
+    })
 
 
 sport_detail_task = {
@@ -450,56 +453,200 @@ sport_detail_task = {
 # 3.View User's Sport Plan Detail
 @app.route('/v1/sport/list_detail', methods=['GET'])
 def sport_view_list_detail():
+    # check data
     return jsonify(sport_detail_task)
 
 
 # 4.View User's Sport Plan List
 @app.route('/v1/sport/list', methods=['GET'])
 def sport_view_list():
-    return ''
+    # check data
+    return jsonify({
+        'msg': '1',
+        'count': 5,
+        'list': [
+            '0101',
+            '0102',
+            '0103',
+            '0104',
+            '0105'
+        ]
+    })
 
 
 # 5.Synchronize User's Sport Report
 @app.route('/v1/sport/asy', methods=['POST'])
 def sport_sync_report():
-    return ''
+    return jsonify({
+        'msg': '1'
+    })
 
 
 # 6.Delete User's Sport Plan
 @app.route('/v1/sport/delete', methods=['POST'])
 def sport_delete_plan():
-    return ''
+    if not request.args:
+        return jsonify(user_error_task[0])
+    if not'user_id' in request.args or not'plan_id' in request.args:
+        return jsonify({
+            'msg': '0',
+            'errorCode': '',
+            'errorMsg': 'User ID or Plan ID is None.'
+        })
+    return jsonify({
+        'msg': '1'
+    })
 
 
 # 7.Share User's Sport Plan
 @app.route('/v1/sport/share', methods=['POST'])
 def sport_share_plan():
-    return ''
+    if not request.args:
+        return jsonify(user_error_task[0])
+    if not'user_id' in request.args:
+        return jsonify({
+            'msg': '0',
+            'errorCode': '',
+            'errorMsg': 'User ID is None.'
+        })
+    if not'target_id' in request.args:
+        return jsonify({
+            'msg': '0',
+            'errorCode': '',
+            'errorMsg': 'Target ID is None.'
+        })
+    if not'plan_id' in request.args:
+        return jsonify({
+            'msg': '0',
+            'errorCode': '',
+            'errorMsg': 'Plan ID is None.'
+        })
+    return jsonify({
+        'msg': '1'
+    })
 
 
 # 8.Verify Shared Sport Plan
 @app.route('/v1/sport/verify_share')
 def sport_verify_shared_plan():
-    return ''
+    if not request.args:
+        return jsonify(user_error_task[0])
+    if not'user_id' in request.args:
+        return jsonify({
+            'msg': '0',
+            'errorCode': '',
+            'errorMsg': 'User ID is None.'
+        })
+    if not'target_id' in request.args:
+        return jsonify({
+            'msg': '0',
+            'errorCode': '',
+            'errorMsg': 'Target ID is None.'
+        })
+    if not'plan_id' in request.args:
+        return jsonify({
+            'msg': '0',
+            'errorCode': '',
+            'errorMsg': 'Plan ID is None.'
+        })
+    if not'acceptance' in request.args:
+        return jsonify({
+            'msg': '0',
+            'errorCode': '',
+            'errorMsg': 'acceptance flag is None.'
+        })
+    return jsonify({
+        'msg': '1'
+    })
 
 
 # SayHi Module
 # 1.Send SayHi
 @app.route('/v1/sh/send', methods=['POST'])
 def sh_send():
-    return ''
+    if not request.args:
+        return jsonify(user_error_task[0])
+    if not'user_id' in request.args:
+        return jsonify({
+            'msg': '0',
+            'errorCode': '',
+            'errorMsg': 'User ID is None.'
+        })
+    if not'target_id' in request.args:
+        return jsonify({
+            'msg': '0',
+            'errorCode': '',
+            'errorMsg': 'Target ID is None.'
+        })
+    return jsonify({
+        'msg': '1'
+    })
 
 
 # 2.Reply SayHi
 @app.route('/v1/sh/reply', methods=['POST'])
 def sh_reply():
-    return ''
+    if not request.args:
+        return jsonify(user_error_task[0])
+    if not'user_id' in request.args:
+        return jsonify({
+            'msg': '0',
+            'errorCode': '',
+            'errorMsg': 'User ID is None.'
+        })
+    if not'reply_id' in request.args:
+        return jsonify({
+            'msg': '0',
+            'errorCode': '',
+            'errorMsg': 'Reply ID is None.'
+        })
+    return jsonify({
+        'msg': '1'
+    })
 
 
 # 3.Get SayHi History
 @app.route('/v1/sh/list', methods=['POST'])
 def sh_get_list():
-    return ''
+    if not request.args:
+        return jsonify(user_error_task[0])
+    if not'user_id' in request.args:
+        return jsonify({
+            'msg': '0',
+            'errorCode': '',
+            'errorMsg': 'User ID is None.'
+        })
+    return jsonify({
+        'msg': '1',
+        'count': 5,
+        'list': [
+            {
+                'send_id': '0001',
+                'target_id': '0002',
+                'status': 0
+            },
+            {
+                'send_id': '0002',
+                'target_id': '0001',
+                'status': 1
+            },
+            {
+                'send_id': '0003',
+                'target_id': '0001',
+                'status': 2
+            },
+            {
+                'send_id': '0001',
+                'target_id': '0004',
+                'status': 2
+            },
+            {
+                'send_id': '0001',
+                'target_id': '0002',
+                'status': 0
+            },
+        ]
+    })
 
 
 if __name__ == '__main__':
