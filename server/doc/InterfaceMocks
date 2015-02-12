@@ -1,3 +1,7 @@
+###伪接口运行：
+##命令行到src/目录下，执行 ‘python user_module.py’
+##如果没有安装Flask，需要首先通过‘easy_install flask’安装flask
+
 
 # http://api.com/v1/<module>/<feature>
 
