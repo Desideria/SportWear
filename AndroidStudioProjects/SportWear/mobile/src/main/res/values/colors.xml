@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="myPrimaryColor">#3F51B5</color>
+    <color name="myPrimaryDarkColor">#3F51B5</color>
+    <color name="myAccentColor">#3F51B5</color>
+    <color name="myDrawerBackground">#F2F2F2</color>
+    <color name="myWindowBackground">#DEDEDE</color>
+    <color name="myTextPrimaryColor">#FFFFFF</color>
+    <color name="myNavigationColor">#000000</color>
+
+    <color name="selected_gray">#ffdbdbdb</color>
+    <color name="white">#ffffff</color>
+    <color name="line_grey">#bdbdbd</color>
+    <color name="red">#ffccbc</color>
+    <color name="green">#def8ce</color>
+
+
+    <color name="bar_highest">#bdbdbd</color>
+    <color name="bar_fill1">#ffccbc</color>
+    <color name="bar_fill2">#def8ce</color>
+    <color name="bar_grid">#ffffff</color>
+</resources>
